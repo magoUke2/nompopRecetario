@@ -1,0 +1,40 @@
+<div class="container p-4">
+    <div class="row">
+        <table class="table table-hover table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Ingrediente</th>
+                    <th scope="col">Medida</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Creado</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each links}}
+                    <tr>
+                     
+                    <th scope="row">{{ingrediente}}</th>
+                    <td>{{medida}}</td>
+                    <td>{{cantidad}}</td>
+                    <td>{{precio}}</td>
+                    <td>{{timeago created_at}}</td>
+                    <td><a href="/links/delete/{{id}}" class="btn btn-danger">Borrar</a></td>
+                       
+                
+                </tr>
+                
+                {{else}}
+                <div class="col-md-4 mx-auto">
+                    <div class="card card-body text center">
+                        <p>No hay materiales creados aún</p>
+                        <a href="/links/add">Crea uno!</a>
+                    </div>
+                </div>
+                {{/each}}
+                
+            </tbody>
+        </table>
+    </div>
+</div>
