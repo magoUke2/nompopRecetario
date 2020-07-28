@@ -1,0 +1,83 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col md 4 mx-auto">
+            <div class="card">
+                <div class="card-body  bg-dark text-light">
+                    <h1 class="display-2">Receta {{links.recipename}}</h1>
+
+                    <blockquote class="blockquote">
+                        <p class="mb-0">{{links.description}}</p>
+                    </blockquote>
+
+                    <div class="card-body  bg-dark text-light">
+                        <form action="/recetas/dganancia/{{links.recipe_id}}" method="POST">
+                        <table class="table table-hover table-dark table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Ingrediente</th>
+                                    <th scope="col">Medida</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Precio </th>
+                                    <th scope="col">Obligatorio </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each ingredients}}
+                                <tr>
+                                    <th scope="row">{{ingrediente}}</th>
+                                    <td>{{medida}}</td>
+                                    <td>{{cantidad}}</td>
+                                    <td>{{precioFinal}}</td>
+                                    <td>
+                                    <select class="custom-select" name="ingredienteObligatorio">
+                                            <option value="1" selected value>Obligatorio</option>
+                                            <option value ="2">No incluir</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                                <tr>
+                                    <th scope="row">Precio total</th>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>{{links.sumatoria}}</td>
+
+                                </tr>
+                                <tr>
+                                    
+                                        <th> <input type="text"  name="ganancia" class="form-control w-70" id="name"
+                                                placeholder="Porcentaje de ganancias" value="{{links.estaGanancia}}"></th>
+                                                <td>-</td>
+                                                <td>-</td>
+                                        <td>-</td>
+                                        <td>{{links.porcentaje}}</td>
+                                  
+                                </tr>
+                            </tbody>
+                        </table>
+                       
+                    </div>
+                    <div class="float-right"><button class="btn btn-secondary" type="submit"> Calcular
+                                                ganancias</button></div>
+                                                </form>
+                    <div class="form-group row mr-2" class="bg-dark">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <form action="/recetas/mitad/{{links.recipe_id}}" method="POST">
+                                <button class="btn btn-secondary mr-2" type="submit" name="options"> Mitad
+                                    receta</button>
+                            </form>
+                            <form action="/recetas/profile/{{links.recipe_id}}" method="GET">
+                                <button class="btn btn-secondary mr-2" type="submit" name="options"> Original</button>
+                            </form>
+                            <form action="/recetas/duplicar/{{links.recipe_id}}" method="POST">
+                                <button class="btn btn-secondary mr-2" type="submit" name="options"> Duplicar
+                                    receta</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

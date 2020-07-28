@@ -1,0 +1,61 @@
+<div class="container p-4 ">
+    <div class="row" >
+        <div class="col md 4 mx-auto">
+            <div class="card">
+                <div class="card-body bg-dark text-light">
+                    <form action="/links/add" method="POST">
+                        
+                         <div class="form-group row">
+                            <label for="name"class="col-sm-2 col-form-label">Ingrediente</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="ingrediente" id="name" placeholder="Ingrediente" autofocus>    
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                             <label for="medida"class="col-sm-2 col-form-label">Medida</label>
+                                <div class="col-sm-10">
+                                <select class="form-control" name="medida">
+                                <option>gr</option>
+                                <option>kg</option>
+                                <option>ml</option>
+                                <option>l</option>
+                                <option>und</option>
+                            </select>  
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cantidad"class="col-sm-2 col-form-label">Cantidad</label>
+                            <div class="col-sm-10">
+                                <input type="number"name="cantidad" class="form-control" placeholder="Cantidad">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="precio"class="col-sm-2 col-form-label">Precio</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                                <input type="text" name="precio" class="form-control" aria-label="COP" placeholder="precio">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                                </div> 
+
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="bton btn-success btn-block">
+                                Guardar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
